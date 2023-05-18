@@ -104,7 +104,7 @@ def abrir_toplevel_notas():
                 messagebox.showinfo("Resultado", "El alumno aprobo la asignatura xd  "+str(entry_not_final))
 
     # boton para convertir
-    bt_convertir = Button(toplevel_notas,text="Resultado", command=convertir)
+    bt_convertir = Button(toplevel_notas,text="Calcular", command=convertir)
     bt_convertir.place(x=200, y=250, width=150, height=100)
 
 
@@ -174,7 +174,7 @@ def abrir_toplevel_salud():
         else:
              messagebox.showinfo("Resultado","Usted tiene Obesidad grado III (mórbida)")
     # boton para convertir
-    bt_convertir = Button(toplevel_salud,text="Resultado", command=convertir_imc)
+    bt_convertir = Button(toplevel_salud,text="Resultados", command=convertir_imc)
     bt_convertir.place(x=200, y=170, width=150, height=100)
 
 

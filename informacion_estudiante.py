@@ -3,7 +3,7 @@ from tkinter import messagebox , ttk
 
 # ventana principal
 ventana_principal = Tk()
-ventana_principal.title("INFORMCION ESTUDIANTIL paul colmenares")
+ventana_principal.title("INFORMCION ESTUDIANTIL paul sebastian colmenares ramirez")
 ventana_principal.geometry("800x600")
 ventana_principal.resizable(False, False)
 ventana_principal.config(bg="yellow")
@@ -13,7 +13,7 @@ ventana_principal.config(bg="yellow")
 def abrir_toplevel_notas():
     global toplevel_notas
     toplevel_notas = Toplevel()
-    toplevel_notas.title("Notas")
+    toplevel_notas.title("Notas paul colmenares")
     toplevel_notas.resizable(False, False)
     toplevel_notas.geometry("600x400")
     toplevel_notas.config(bg="yellow")
@@ -30,61 +30,66 @@ def abrir_toplevel_notas():
     menu_salir.add_command(label="Salir", command=salir)
     barra_menu.add_cascade(label="Salir", menu=menu_salir)
 
+# texto asignatura
+    asig=Label(toplevel_notas, text="Asignatura =")
+    asig.config(bg="blue", fg="black", font=("Helvetica",20))
+    asig.place(x=20,y=10)
+
 
     # texto procedimental
     proce=Label(toplevel_notas, text="procedimental =")
     proce.config(bg="blue", fg="black", font=("Helvetica",20))
-    proce.place(x=20,y=30)
+    proce.place(x=20,y=50)
 
     # caja de texto para procedimental
     entry_proce=Entry(toplevel_notas)
     entry_proce.config(bg="blue", fg="black",font=("Time New Roman",16), width=20)
     entry_proce.focus_set()
-    entry_proce.place(x=220 , y=30)
+    entry_proce.place(x=220 , y=50)
 
     # texto cognitivo
     cog=Label(toplevel_notas, text="cognitiva =")
     cog.config(bg="blue", fg="black", font=("Helvetica",20))
-    cog.place(x=20,y=70)
+    cog.place(x=20,y=90)
 
     # caja de texto para cognitivo
     entry_cog=Entry(toplevel_notas)
     entry_cog.config(bg="blue", fg="black",font=("Time New Roman",16), width=20)
     entry_cog.focus_set()
-    entry_cog.place(x=220 , y=70)
+    entry_cog.place(x=220 , y=90)
 
     # texto autoevaluacion
     auto=Label(toplevel_notas, text="autoevaluacion =")
     auto.config(bg="blue", fg="black", font=("Helvetica",19))
-    auto.place(x=20,y=110)
+    auto.place(x=20,y=130)
 
     # caja de texto para autoevaluacion
     entry_auto=Entry(toplevel_notas)
     entry_auto.config(bg="blue", fg="black",font=("Time New Roman",16), width=20)
     entry_auto.focus_set()
-    entry_auto.place(x=220 , y=110)
+    entry_auto.place(x=220 , y=130)
 
     # texto actitudinal
     acti=Label(toplevel_notas, text="actitudinal =")
     acti.config(bg="blue", fg="black", font=("Helvetica",20))
-    acti.place(x=20,y=150)
+    acti.place(x=20,y=170)
 
     # caja de texto para actitudinal
     entry_acti=Entry(toplevel_notas)
     entry_acti.config(bg="blue", fg="black",font=("Time New Roman",16), width=20)
     entry_acti.focus_set()
-    entry_acti.place(x=220 , y=150)
+    entry_acti.place(x=220 , y=170)
 
     # texto bimestral
     bime=Label(toplevel_notas, text="bimestral =")
     bime.config(bg="blue", fg="black", font=("Helvetica",20))
-    bime.place(x=20,y=190)
+    bime.place(x=20,y=210)
 
     # caja de texto para bimestral
     entry_bime=Entry(toplevel_notas)
     entry_bime.config(bg="blue", fg="black",font=("Time New Roman",16), width=20)
     entry_bime.focus_set()
-    entry_bime.place(x=220 , y=190)
+    entry_bime.place(x=220 , y=210)
 
     def convertir():
         messagebox.showinfo("Nota Difinitiva", "Operacion realizada")
@@ -99,13 +104,18 @@ def abrir_toplevel_notas():
         entry_not_final = (0.3*entry_proce_def) + (0.3*entry_cog_def) + (0.1*entry_auto_def) + (0.1*entry_acti_def) + (0.2*entry_bime_def)
 
         if entry_not_final < 30:
-                messagebox.showinfo("Resultado", "El alumno reprobo la asignatura  xd  "+str(entry_not_final))
+                messagebox.showinfo("Resultado", "El alumno reprobo la asignatura"+str(entry_not_final))
         else:
-                messagebox.showinfo("Resultado", "El alumno aprobo la asignatura xd  "+str(entry_not_final))
+                messagebox.showinfo("Resultado", "El alumno aprobo la asignatura"+str(entry_not_final))
 
     # boton para convertir
     bt_convertir = Button(toplevel_notas,text="Calcular", command=convertir)
     bt_convertir.place(x=200, y=250, width=150, height=100)
+
+    lista_desplegable = ttk.Combobox(toplevel_notas, width=20)
+    lista_desplegable.place (x=220, y=10)
+    opciones = ["Estadistica", "Trigonometria y Geometria Analitica", "Valores", "Filosofia", "Lengua Castellana", "Ingles", "Artistica", "Quimica", "Fisica", "Ed.Fisica", "Ed.Religiosa", "Sociales", "Politica"]
+    lista_desplegable["values"]=opciones
 
 
 
@@ -113,7 +123,7 @@ def abrir_toplevel_notas():
 def abrir_toplevel_salud():
     global toplevel_salud
     toplevel_salud = Toplevel()
-    toplevel_salud.title("Salud")
+    toplevel_salud.title("Salud paul colmenares")
     toplevel_salud.resizable(False, False)
     toplevel_salud.geometry("500x300")
     toplevel_salud.config(bg="yellow")
@@ -186,8 +196,6 @@ def salir():
 # borrar
 def borrar():
     messagebox.showinfo("Informacion", "Los datos se guardaron")
-
-
 
 
 # menu salir
@@ -288,6 +296,5 @@ bt_salud=Button(ventana_principal, command=abrir_toplevel_salud)
 imagen_salud=PhotoImage(file="img/salud.png")
 bt_salud.config(image=imagen_salud)
 bt_salud.place(x=600, y=420, width=150, height=150)
-
 
 ventana_principal.mainloop()
